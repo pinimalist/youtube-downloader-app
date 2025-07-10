@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>유튜브 다운로드</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 40px; }
+    input[type="text"] { width: 70%; padding: 8px; font-size: 16px; }
+    button { padding: 8px 16px; font-size: 16px; margin-top: 10px; }
+    .format-select, .quality-select { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>유튜브 영상 다운로드</h1>
+  <form method="post">
+    <input type="text" name="url" placeholder="유튜브 링크를 입력하세요" required><br>
+
+    <div class="format-select">
+      <label><input type="radio" name="format" value="mp4" checked> MP4</label>
+      <label><input type="radio" name="format" value="mp3"> MP3</label>
+    </div>
+
+    <div class="quality-select">
+      <label for="quality">화질 선택:</label>
+      <select name="quality" id="quality">
+        <option value="best">최고화질 (기본)</option>
+        <option value="1080">1080p</option>
+        <option value="720">720p</option>
+        <option value="480">480p</option>
+        <option value="360">360p</option>
+      </select>
+    </div>
+
+    <button type="submit">다운로드</button>
+  </form>
+</body>
+</html>
