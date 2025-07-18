@@ -43,7 +43,6 @@ def index():
                 if format_type == "mp3":
                     filename = filename.rsplit('.', 1)[0] + '.mp3'
 
-                # .mkv로 저장되었으면 확장자 변경
                 if filename.endswith(".mkv") and format_type == "mp4":
                     new_filename = filename.replace(".mkv", ".mp4")
                     os.rename(filename, new_filename)
@@ -55,5 +54,7 @@ def index():
 
     return render_template("index.html")
 
+# 🔧 여기 수정
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=3000)
+    port = int(os.environ.get("PORT", 10000))  # ← Render 대응
+    app.run(host="0.0.0.0", port=port)
