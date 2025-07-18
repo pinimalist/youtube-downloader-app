@@ -56,5 +56,6 @@ def index():
 
 # 🔧 여기 수정
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))  # ← Render 대응
+    port = int(os.environ.get("PORT", 3000))
     app.run(host="0.0.0.0", port=port)
+
